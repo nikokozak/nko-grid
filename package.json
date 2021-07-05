@@ -1,6 +1,6 @@
 {
   "name": "nko-grid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A grid-making utility.",
   "main": "index.js",
   "scripts": {

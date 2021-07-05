@@ -15,7 +15,7 @@ export default class NKOGrid {
 		this.numX = optionOr('numX', 10);
 		this.numY = optionOr('numY', 10);
 
-		this.nodes = Array(numX * numY);
+		this.nodes = Array(this.numX * this.numY);
 		populateNodes(this);
 
 	}
