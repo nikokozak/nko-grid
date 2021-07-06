@@ -1,6 +1,6 @@
-import makeOptionGetter from './utils'
+const { makeOptionGetter } = require('./utils');
 
-export default class NKOGrid {
+class NKOGrid {
 	
 	constructor (params) {
 	
@@ -56,3 +56,5 @@ function populateNodes (grid) {
 		}
 	}
 }
+
+module.exports = NKOGrid;
