@@ -12,8 +12,12 @@ export default class NKOGrid {
 		this.centerX = optionOr('centerX', 0);
 		this.centerY = optionOr('centerY', 0);
 
+
 		this.numX = optionOr('numX', 10);
 		this.numY = optionOr('numY', 10);
+
+		this.spacingX = this.width / this.numX;
+		this.spacingY = this.height / this.numY;
 
 		this.nodes = Array(this.numX * this.numY);
 		populateNodes(this);
@@ -38,12 +42,10 @@ export default class NKOGrid {
 
 function populateNodes (grid) {
 
-	const spacingX = grid.width / grid.numX;
-	const spacingY = grid.height / grid.numY;
 	function index(col, row) { return row * grid.numX + col; }
 
-	for (let i = 0, sX = spacingX / 2; i < grid.numX; i++, sX += spacingX) {
-		for (let j = 0, sY = spacingY / 2; j < grid.numY; j++, sY += spacingY) {
+	for (let i = 0, sX = grid.spacingX / 2; i < grid.numX; i++, sX += grid.spacingX) {
+		for (let j = 0, sY = grid.spacingY / 2; j < grid.numY; j++, sY += grid.spacingY) {
 			grid.nodes[index(i, j)] = {
 				x: sX,
 				y: sY,
